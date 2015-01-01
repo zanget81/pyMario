@@ -1,8 +1,14 @@
+import json
+from constants import Constants
 
 class Locale:
+    resourceTable = {}
 
-    def __init__(self):
-        pass
+    def __init__(self, locale):
+        filePath = Constants().TEXT + '/' + locale + '/' + 'resources.json'
+
+        with open(filePath) as f:
+            self.resourceTable = json.loads(f.read())
 
     def getString(self, str):
-        pass
+        return self.resourceTable.get(str, str)

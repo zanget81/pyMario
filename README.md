@@ -15,6 +15,10 @@ Tests
 
     nosetests --with-coverage --cover-package=.
 
+    with standard output:
+
+    nosetests --with-coverage --nocapture --cover-package=.
+
 Run
 ---
     python -m src.main
@@ -30,3 +34,5 @@ Windows
 Using py2exe:
 
     python setup.py py2exe
+
+    (Currently not working)

@@ -1,1 +1,2 @@
 https://www.youtube.com/watch?v=0q5uDKtI1Go
+http://www.pygame.org/wiki/Pygame2exe?parent=CookBook

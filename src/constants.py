@@ -2,8 +2,8 @@ __author__ = 'angel'
 
 
 class Constants:
-    IMAGES = './../resources/img'
-    TEXT = './../resources/text'
+    IMAGES = 'resources/img'
+    TEXT = 'resources/text'
 
     ICON = IMAGES + '/' + 'icon.png'
 
