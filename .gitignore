@@ -1,0 +1,13 @@
+#folders
+build
+dist
+
+#extensions
+*.pyc
+*.mp4
+
+#IDE
+.idea
+
+#temp files
+.coverage
