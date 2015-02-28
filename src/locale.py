@@ -5,7 +5,7 @@ class Locale:
     resourceTable = {}
 
     def __init__(self, locale):
-        filePath = Constants().TEXT + '/' + locale + '/' + 'resources.json'
+        filePath = Constants.TEXT + '/' + locale + '/' + 'resources.json'
 
         with open(filePath) as f:
             self.resourceTable = json.loads(f.read())

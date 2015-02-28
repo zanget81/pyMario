@@ -13,15 +13,14 @@ class Player:
     SPRITE_SMALL_MARIO_HEIGHT = 16
 
     def __init__(self, img, player):
-        self.constantHandler = Constants()
         self.img = pygame.image.load(img)
         self.tPos = (0,0);
         self.player = player
 
     def update(self, movementDirection):
-        if movementDirection == self.constantHandler.RIGHT:
+        if movementDirection == Constants.RIGHT:
             self.tPos = (self.tPos[0]+1, self.tPos[1]);
-        elif movementDirection == self.constantHandler.LEFT:
+        elif movementDirection == Constants.LEFT:
             self.tPos = (self.tPos[0]-1, self.tPos[1]);
 
     def getPlayerImage(self):
@@ -41,6 +40,6 @@ class Player:
 
     def handleKey(self, keys):
         if keys[pygame.K_RIGHT]:
-            self.update(self.constantHandler.RIGHT)
+            self.update(Constants.RIGHT)
         elif keys[pygame.K_LEFT]:
-            self.update(self.constantHandler.LEFT)
+            self.update(Constants.LEFT)

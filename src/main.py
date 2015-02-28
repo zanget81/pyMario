@@ -8,18 +8,17 @@ from level import Level
 
 def main():
 
-    constantHandler = Constants()
-    localeHandler = Locale(constantHandler.LOCALE)
+    localeHandler = Locale(Constants.LOCALE)
     my_clock = pygame.time.Clock()
 
     """ Set up the game and run the main game loop """
     pygame.init()  # Prepare the pygame module for use
 
     # Create surface of (width, height), and its window.
-    mainSurface = pygame.display.set_mode((constantHandler.WIDTH, constantHandler.HEIGHT))
+    mainSurface = pygame.display.set_mode((Constants.WIDTH, Constants.HEIGHT))
 
-    iconSurface = pygame.image.load(constantHandler.ICON)
-    icon = pygame.transform.scale(iconSurface, (constantHandler.ICON_SIZE, constantHandler.ICON_SIZE))
+    iconSurface = pygame.image.load(Constants.ICON)
+    icon = pygame.transform.scale(iconSurface, (Constants.ICON_SIZE, Constants.ICON_SIZE))
     pygame.display.set_icon(icon)
     pygame.display.set_caption(localeHandler.getString("PYGAME_WINDOW_TITLE"))
     pygame.mouse.set_visible(0)
@@ -27,10 +26,10 @@ def main():
     allSprites = [] # Keep a list of all sprites in the game
 
     # Setup for levels and players
-    level1 = Level(constantHandler.LEVEL1_1_BACKGROUND, (constantHandler.WIDTH, constantHandler.HEIGHT))
+    level1 = Level(Constants.LEVEL1_1_BACKGROUND, (Constants.WIDTH, Constants.HEIGHT))
     allSprites.append(level1)
 
-    player1 = Player(constantHandler.PLAYER, Player.PLAYER1)
+    player1 = Player(Constants.PLAYER, Player.PLAYER1)
     allSprites.append(player1)
 
     while True:
