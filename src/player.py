@@ -31,6 +31,14 @@ class Player:
 
         return image
 
+    @property
+    def position(self):
+        return self.tPos
+
+    @position.setter
+    def position(self, value):
+        self.tPos = value
+
     def draw(self, targetSurface):
         #cropped = pygame.Surface((self.SPRITE_MARIO_WIDTH, self.SPRITE_SMALL_MARIO_HEIGHT))
         #cropped.blit(self.img, (0, 0), self.getPlayerImage())
@@ -39,7 +47,7 @@ class Player:
         targetSurface.blit(self.img, self.tPos, self.getPlayerImage())
 
     def handleKey(self, keys):
-        if keys[pygame.K_RIGHT]:
+        if keys.get(pygame.K_RIGHT):
             self.update(Constants.RIGHT)
-        elif keys[pygame.K_LEFT]:
+        elif keys.get(pygame.K_LEFT):
             self.update(Constants.LEFT)

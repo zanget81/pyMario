@@ -5,6 +5,8 @@ from constants import Constants
 from locale import Locale
 from player import Player
 from level import Level
+from collisionManager import CollisionManager
+from physicsManager import PhysicsManager
 
 def main():
 
@@ -25,12 +27,18 @@ def main():
 
     allSprites = [] # Keep a list of all sprites in the game
 
+    #TODO: Some of this things needs to go into a screen manager
+
     # Setup for levels and players
     level1 = Level(Constants.LEVEL1_1_BACKGROUND, (Constants.WIDTH, Constants.HEIGHT))
     allSprites.append(level1)
 
     player1 = Player(Constants.PLAYER, Player.PLAYER1)
     allSprites.append(player1)
+
+    # game helpers
+    collisionManagerInstance = CollisionManager()
+    physicsManagerInstance = PhysicsManager()
 
     while True:
         ev = pygame.event.poll()    # Look for any event
@@ -44,6 +52,8 @@ def main():
         elif level1.handleKey(keys):
             pass
 
+        collisionManagerInstance.checkCollisions()
+        physicsManagerInstance.applyPhysics()
 
         # Ask every sprite to draw itself.
         for sprite in allSprites:
@@ -52,7 +62,7 @@ def main():
         pygame.display.update()
 
         #force a constant frame rate of 60fps
-        my_clock.tick(60)
+        my_clock.tick(Constants.FRAME_RATE)
 
     pygame.quit()     # Once we leave the loop, close the window.
 

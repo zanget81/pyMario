@@ -10,8 +10,4 @@ class Test(unittest.TestCase):
 
     def testCheckCollisionCorrectly(self):
         cmInstance = CollisionManager()
-        cmInstance.loadLevelFile(Constants.LEVEL1_1_COLLISIONS_FILE)
-        pos = (447, 0)
-
-        result = cmInstance.checkCollision(pos)
-        self.assertTrue(result)
+        cmInstance.checkCollisions()

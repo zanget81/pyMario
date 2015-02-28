@@ -23,3 +23,5 @@ class Constants:
     ICON_SIZE = 32
 
     LOCALE = 'en-gb'
+
+    FRAME_RATE = 60
