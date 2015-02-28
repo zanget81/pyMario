@@ -27,7 +27,7 @@ def main():
     allSprites = [] # Keep a list of all sprites in the game
 
     # Setup for levels and players
-    level1 = Level(constantHandler.LEVEL1_1, (constantHandler.WIDTH, constantHandler.HEIGHT))
+    level1 = Level(constantHandler.LEVEL1_1_BACKGROUND, (constantHandler.WIDTH, constantHandler.HEIGHT))
     allSprites.append(level1)
 
     player1 = Player(constantHandler.PLAYER, Player.PLAYER1)
