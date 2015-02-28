@@ -2,7 +2,7 @@ __author__ = 'angel'
 
 import pygame
 
-class Level:
+class Level(object):
 
     def __init__(self, img, windowSize):
         self.img = pygame.image.load(img)

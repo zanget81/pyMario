@@ -1,5 +1,5 @@
 
 
-class BlockTypes:
+class BlockTypes(object):
 
     STATIC = "STATIC"

@@ -21,14 +21,15 @@ class Test(unittest.TestCase):
 
 
     def testHandleKeyPlayerRight(self):
-        keys = {pygame.K_RIGHT : True}
+        print 'blaaaaaaaaaaaaa'
+        keys = {pygame.K_LEFT : True, pygame.K_RIGHT : True}
 
         player1 = Player(Constants.PLAYER, Player.PLAYER1)
         self.assertIsNotNone(player1)
         player1.handleKey(keys)
 
     def testHandleKeyPlayerLeft(self):
-        keys = {pygame.K_LEFT : True}
+        keys = {pygame.K_LEFT : True, pygame.K_RIGHT : True}
 
         player1 = Player(Constants.PLAYER, Player.PLAYER1)
         self.assertIsNotNone(player1)
@@ -37,5 +38,10 @@ class Test(unittest.TestCase):
     def testGetSetPosition(self):
         player1 = Player(Constants.PLAYER, Player.PLAYER1)
         self.assertIsNotNone(player1)
-        player1.position = (0,50)
-        self.assertEqual(player1.position, (0,50))
+        player1.position = (15,16)
+        self.assertEqual(player1.position, (15,16))
+
+    def testGetSetSize(self):
+        player1 = Player(Constants.PLAYER, Player.PLAYER1)
+        self.assertIsNotNone(player1)
+        self.assertEqual(player1.size, (15,16))

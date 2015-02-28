@@ -1,0 +1,11 @@
+[
+    {
+        "rectangle": {
+                "left": 0,
+                "top": 200,
+                "width": 1103,
+                "height": 200
+        },
+        "type": "STATIC"
+    }
+]

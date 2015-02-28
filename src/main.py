@@ -38,7 +38,12 @@ def main():
 
     # game helpers
     collisionManagerInstance = CollisionManager()
+    collisionManagerInstance.loadLevelFile(Constants.LEVEL1_1_COLLISIONS_FILE)
+
     physicsManagerInstance = PhysicsManager()
+
+    collisionManagerInstance.registerWorldObject(player1)
+    physicsManagerInstance.registerWorldObject(player1)
 
     while True:
         ev = pygame.event.poll()    # Look for any event
@@ -54,6 +59,7 @@ def main():
 
         collisionManagerInstance.checkCollisions()
         physicsManagerInstance.applyPhysics()
+        collisionManagerInstance.checkCollisions()
 
         # Ask every sprite to draw itself.
         for sprite in allSprites:

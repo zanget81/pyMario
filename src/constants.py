@@ -1,7 +1,7 @@
 __author__ = 'angel'
 
 
-class Constants:
+class Constants(object):
     IMAGES = 'resources/img'
     TEXT = 'resources/text'
     LEVELS = 'levels'
@@ -10,7 +10,7 @@ class Constants:
     ICON = IMAGES + '/' + 'icon.png'
     PLAYER = IMAGES + '/' + 'players.png'
     LEVEL1_1_BACKGROUND = IMAGES + '/' + 'level-1-1.png'
-    LEVEL1_1_COLLISIONS_FILE = LEVEL1_1 + '/' + 'collisions.png'
+    LEVEL1_1_COLLISIONS_FILE = LEVEL1_1 + '/' + 'collisions.json'
 
     WIDTH = 256
     HEIGHT = 224   # Desired physical surface size, in pixels.

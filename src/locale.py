@@ -1,7 +1,7 @@
 import json
 from constants import Constants
 
-class Locale:
+class Locale(object):
     resourceTable = {}
 
     def __init__(self, locale):
