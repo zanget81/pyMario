@@ -12,6 +12,7 @@ def main():
 
     localeHandler = Locale(Constants.LOCALE)
     my_clock = pygame.time.Clock()
+    frameCounter = 0
 
     """ Set up the game and run the main game loop """
     pygame.init()  # Prepare the pygame module for use
@@ -30,10 +31,10 @@ def main():
     #TODO: Some of this things needs to go into a screen manager
 
     # Setup for levels and players
-    level1 = Level(Constants.LEVEL1_1_BACKGROUND, (Constants.WIDTH, Constants.HEIGHT))
-    allSprites.append(level1)
-
     player1 = Player(Constants.PLAYER, Player.PLAYER1)
+    level1 = Level(Constants.LEVEL1_1_BACKGROUND, (Constants.WIDTH, Constants.HEIGHT), player1)
+
+    allSprites.append(level1)
     allSprites.append(player1)
 
     # game helpers
@@ -45,6 +46,7 @@ def main():
     collisionManagerInstance.registerWorldObject(player1)
     physicsManagerInstance.registerWorldObject(player1)
 
+
     while True:
         ev = pygame.event.poll()    # Look for any event
         if ev.type == pygame.QUIT:  # Window close button clicked?
@@ -52,10 +54,9 @@ def main():
         keys = pygame.key.get_pressed()
         if keys[pygame.K_ESCAPE]:
             break
-        elif player1.handleKey(keys):
-            pass
-        elif level1.handleKey(keys):
-            pass
+
+        player1.handleKey(keys)
+        level1.handleKey(keys)
 
         collisionManagerInstance.checkCollisions()
         physicsManagerInstance.applyPhysics()
